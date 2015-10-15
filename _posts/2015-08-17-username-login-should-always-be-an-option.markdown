@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Username Login Should Always be an Option"
-date:   2015-10-15 10:09:45
-categories: jekyll update
+date:   2015-08-17 13:06:45
+categories: talk
 ---
 I have a few thoughts about logins. Especially on a phone, but even on a desktop, it is an inconvenience to type out email addresses, due to symbols and the cruft of the domain name and tld. 
 
