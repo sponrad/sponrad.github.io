@@ -2,7 +2,7 @@
 title: Conrad Frame
 email: conradframe@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-Fresh install of jekyll blog on google sites.
+ Fresh install of jekyll blog on google sites.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: conradframe
