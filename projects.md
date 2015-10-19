@@ -4,7 +4,7 @@ title: Projects
 permalink: /projects/
 ---
 
-Projects since 2011. A lot of these are abandoned, in loose order of activeness.
+Since 2011. A lot of these are abandoned, in loose order of activeness.
 
 **[Flash Force](http://www.flashforceapp.com)** - An upcoming mobile app that allows groups of people to flash patterns of light together in sync. I am in charge of app development and created the timing system. I made the iOS app using Swift, the server is Python/Django based, and the Android app might be React Native.
 
