@@ -4,28 +4,25 @@ layout: default
 
 <div class="home">
 
-  <h3>I am an engineer in North San Diego, California.</h3>
-  <p>I have a strong physics and civil engineering background which gives me a unique look at a lot of problems that arise in projects I work on!</p>
+  <h2>I am an engineer in North San Diego, California.</h2>
+  <p>I have a strong physics and civil engineering background which gives me a unique look at problems in software projects I work on.</p>
   
-  <p>I really like to build stuff and I am good at doing that with code. I fall in the back-end developer camp, but given a design I can flesh out some mean front-end work also. Check out my [projects](/projects) to see some of the things I have worked on.</p>
-  
-  <p>Technology that I like to use (the list I don't like to use is undisclosed):</p>
+  <p>Some technology I like to use:</p>
   <ul class="tech-list">
-  <li>Python and Django</li>
-  <li>Front-end stuff: HTML, Javscript, Jquery, CSS</li>
-  <li>Emacs</li>
-  <li>THE COMMAND LINE</li>
-  <li>iOS with Swift is not THAT BAD!</li>
-  <li>Meteor, I want to use this more!</li>
-  <li>React and React Native, these are so cool</li>
+    <li>Python and Django</li>
+    <li>iOS with Swift</li>
+    <li>Emacs</li>
+    <li>The Command Line</li>
+    <li>Front-end stuff: HTML, Javscript, jQuery, CSS</li>
+    <li>Meteor, I want to use this more!</li>
+    <li>React and React Native, these are so cool</li>
   </ul>
-  
-  <p>Projects:</p>
-  <ul class="project-list">
-  <li></li>
-  </ul>
+  <br>
 
+  <hr>
+  
   <ul class="post-list">
+    <h2>Posts</h2>
     {% for post in site.posts %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
@@ -36,7 +33,5 @@ layout: default
       </li>
     {% endfor %}
   </ul>
-
-  <p class="rss-subscribe"><small><a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a></small></p>
 
 </div>
