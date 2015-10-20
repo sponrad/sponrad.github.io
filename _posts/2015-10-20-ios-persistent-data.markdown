@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "How I Got Persistent Data in iOS with Swift"
+date:   2015-10-20 
+categories: ios swift
+---
+
+I have been working on an iOS app called Flash Force over the past few months and one of the biggest problems I had to overcome right away was how to get small bits of data to persist for a user across all their devices and across uninstall/reinstalls of the app.
+
+The best way I discovered is to store the data in the [Keychain](https://developer.apple.com/library/mac/documentation/Security/Conceptual/keychainServConcepts/01introduction/introduction.html) (which is typically used to store passwords and keys). Apple provides Keychain use free of charge to both developers and users and the same Keychain is accessible by a user from any of their devices at any time. And users cannot directly edit Keychain values themselves.
+
+Storing values in Keychain is simple with the helper functions provided in [Keychain-Swift](https://github.com/exchangegroup/keychain-swift). Without a helper library the built-in API is rather verbose.
+
+All you have to do is plop the main swift file from that repository into your project and you can start getting and setting Keychain values with something like this:
+
+{% highlight swift %}
+keychain.set("hello world", forKey: "my key")
+
+keychain.get("my key")
+{% endhighlight %}
+
+Bear in mind that "keychain" will be the name of whatever you named the file
+
+This has been helpful to me to be able to set keys for several things:
+* Storing generated user ids for this user that I can use to identify them across devices.
+* Storing whether or not users have redeemed "Free" functionality in the app.
+
+The Keychain has been immensely helpful as the other alternatives were to require users to log in and store all of their data on our on server tied to their account. Lot of work for what ended up being a simple thing.

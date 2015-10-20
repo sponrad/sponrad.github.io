@@ -5,7 +5,7 @@ date:   2015-10-15 10:09:45
 categories: jekyll update
 ---
 
-I am impressed with the Jekyll setup with Github pages. It plays to a lot of my strengths to be able to edit posts directly in whatever text editor I want to and to make changes live with a simple "git push".
+I am impressed with the Jekyll setup with Github pages. It plays to a lot of my strengths to be able to edit posts directly in whatever text editor I want to and to make changes live with a simple ```git push```.
 
 I will leave this intro post on here as a marker point for when I transferred this over. I was able to import a few of my posts from Tumblr without too much trouble so there is a little bit of pre-history on here.
 
