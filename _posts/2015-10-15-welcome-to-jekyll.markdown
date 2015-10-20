@@ -3,6 +3,7 @@ layout: post
 title:  "Switched to Jekyll ... Welcome to Jekyll!"
 date:   2015-10-15 10:09:45
 categories: jekyll update
+comments: true
 ---
 
 I am impressed with the Jekyll setup with Github pages. It plays to a lot of my strengths to be able to edit posts directly in whatever text editor I want to and to make changes live with a simple ```git push```.

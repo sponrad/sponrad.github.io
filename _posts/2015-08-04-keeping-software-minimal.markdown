@@ -3,6 +3,7 @@ layout: post
 title:  "Keeping Software Minimal"
 date:   2015-08-04 18:23:00
 categories: talk
+comments: true
 ---
 Over the past five years I have been involved in at least five software projects. Only one of them has launched. Depressing! I think one of the main reasons for these projects failing is feature creep. 
 

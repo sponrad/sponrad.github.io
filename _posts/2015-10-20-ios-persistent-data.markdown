@@ -3,6 +3,7 @@ layout: post
 title:  "How I Got Persistent Data in iOS with Swift"
 date:   2015-10-20 
 categories: ios swift
+comments: true
 ---
 
 I have been working on an iOS app called Flash Force over the past few months and one of the biggest problems I had to overcome right away was how to get small bits of data to persist for a user across all their devices and across uninstall/reinstalls of the app.
