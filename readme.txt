@@ -63,3 +63,17 @@ keychain.set("hello world", forKey: "my key")
 
 keychain.get("my key")
 {% endhighlight %}
+
+
+IMAGES
+------
+
+Sadly this kramdown variant does not work with GFM, ![test](https://github.com/favicon.ico){:height="24px" width="48px"}
+
+No scaling, with HTML <img src="https://github.com/favicon.ico">
+
+Setting width to 48, with HTML <img src="https://github.com/favicon.ico" width="48">
+
+Setting height to 24, with HTML <img src="https://github.com/favicon.ico" height="24">
+
+Setting height to 24, and width to 48, with HTML <img src="https://github.com/favicon.ico" height="24" width="48">
