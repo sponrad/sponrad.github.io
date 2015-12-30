@@ -6,6 +6,8 @@ p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
     margin: 0;
     padding: 0;
+    text-rendering: optimizeLegibility;
+    letter-spacing: $letter-spacing;
 }
 
 
@@ -33,6 +35,10 @@ p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
     margin-bottom: $spacing-unit / 2;
+}
+
+p {
+    margin-bottom: $spacing-unit;
 }
 
 
