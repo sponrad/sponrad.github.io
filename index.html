@@ -3,25 +3,21 @@ layout: default
 ---
 
 <div class="home">
+  <img style="border-radius: 25%; margin: 0px auto 25px auto; display: block;" src="/assets/portraitwh.jpg" width="200">
+  
+  <h2>I am an engineer in North San Diego, California.</h2>
 
-  <img style="float: left; padding-right: 30px;" src="/assets/portraitwh.jpg" width="200">
-  <div style="width: 500px; float: right;">
-    <h2>I am an engineer in North San Diego, California.</h2>
-
-    <p>I have a strong physics and civil engineering background which gives me a unique look at problems in software projects. I am a husband and a father and I love to surf and play video games.</p>
-  </div>
-
-  <div style="clear: both; height: 20px;"></div>
- 
+  <p>I have a strong physics and civil engineering background which gives me a unique look at problems in software projects. I am a husband and father and I love to surf and play video games.</p>
+  
   <ul class="post-list">
     {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+    </li>
     {% endfor %}
   </ul>
 
