@@ -18,11 +18,11 @@ This is wildly out of the ordinary for the service, most days I use about 0.003 
 
 To top it all off this customer's card payment passed at first but failed later so I didn't even get that payment. I sent them an email explaining the situation and never heard back, I think they were spammers.
 
-###And Again...
+### And Again...
 
 So fast forward to December 2015. Same things happens. **Site outage** for a few hours and I get some angry emails from customers, and fires to put out. I look into the issue and it is a near perfect repeat: crazy absurd use of the unlimited plan, complete with card failing to charge.
 
-###Action
+### Action
 
 My good customers that order the Unlimited plan, and continue to pay each month, send between 500 and 3,000 emails per month. There really is no reason for me to continue to expose the site to the vulnerabilities that come with offering an unlimited plan when most good users are so far below *unlimited*.
 
