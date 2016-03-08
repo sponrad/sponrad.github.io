@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conrad Frame</title>
+    <description>Build stuff. Love your family and friends. Play games. Surf.
+</description>
+    <link>http://conradframe.com/</link>
+    <atom:link href="http://conradframe.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>2016-03-07 20:00:47 -0800</pubDate>
+    <lastBuildDate>2016-03-07 20:00:47 -0800</lastBuildDate>
+    <generator>Jekyll v</generator>
+    
+      <item>
+        <title>Speed Up Ubuntu MAKE IT USABLE</title>
+        <description>
+</description>
+        <pubDate>2016-03-07 00:00:00 -0800</pubDate>
+        <link>http://conradframe.com/talk/2016/03/07/speed-up-ubuntu.html</link>
+        <guid isPermaLink="true">http://conradframe.com/talk/2016/03/07/speed-up-ubuntu.html</guid>
+        
+        
+        <category>talk</category>
+        
+      </item>
+    
+      <item>
+        <title>Engineering an Unlimited plan is Impossible</title>
+        <description>&lt;p&gt;I am getting rid of my Unlimited account plans and here is why.&lt;/p&gt;
+
+&lt;p&gt;On some Sunday in spring of 2015 I got into a conversation with someone and we started talking about a site I run called &lt;a href=&quot;http://www.sendrecurring.com&quot;&gt;SendRecurring&lt;/a&gt;. SendRecurring is a service that lets people schedule recurring emails and texts for reminding and to ping servers and who knows what else. This person was excited to see it so I pulled out my phone and navigated to the page only to be greeted with…. some error message from my Appengine hosting that the site is unavailable.&lt;/p&gt;
+
+&lt;p&gt;This was a seriously bad moment for me because first off the site had never had this happen before, and also it was timed right when I was about to show it off to someone. Talk about caught with my pants down! I quickly explained to them that something was wrong and darted up to my laptop to diagnose the problem.&lt;/p&gt;
+
+&lt;p&gt;It didn’t take long to find it. Some derelict customer had ordered an Unlimited plan and used it to send &lt;strong&gt;29.5 GB&lt;/strong&gt; of email message body data before my quota for that hit and froze the site. This is a huge amount, equivalent to millions and millions of emails.&lt;/p&gt;
+
+&lt;p&gt;This is wildly out of the ordinary for the service, most days I use about 0.003 GB of that specific metric so about 0.01% of available quota.&lt;/p&gt;
+
+&lt;p&gt;To top it all off this customer’s card payment passed at first but failed later so I didn’t even get that payment. I sent them an email explaining the situation and never heard back, I think they were spammers.&lt;/p&gt;
+
+&lt;h3 id=&quot;and-again&quot;&gt;And Again…&lt;/h3&gt;
+
+&lt;p&gt;So fast forward to December 2015. Same things happens. &lt;strong&gt;Site outage&lt;/strong&gt; for a few hours and I get some angry emails from customers, and fires to put out. I look into the issue and it is a near perfect repeat: crazy absurd use of the unlimited plan, complete with card failing to charge.&lt;/p&gt;
+
+&lt;h3 id=&quot;action&quot;&gt;Action&lt;/h3&gt;
+
+&lt;p&gt;My good customers that order the Unlimited plan, and continue to pay each month, send between 500 and 3,000 emails per month. There really is no reason for me to continue to expose the site to the vulnerabilities that come with offering an unlimited plan when most good users are so far below &lt;em&gt;unlimited&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;No matter how beefy I make my servers, an Unlimited plan can eventually be overrun, whether it is due to actually maxing out hardware and pre-set quotas, or until the bank account it is linked to is overdrawn. Not worth the risk.&lt;/p&gt;
+
+&lt;p&gt;I am normally operating within 1% of my quota… why even offer the chance to max out my site?&lt;/p&gt;
+
+&lt;p&gt;So…&lt;/p&gt;
+
+&lt;p&gt;I am changing the Unlimited plan to something like 10,000 and calling it good for a while.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;I recommend anyone who runs a SaaS to not include an Unlimited plan since they are impossible to engineer.&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>2015-12-25 00:00:00 -0800</pubDate>
+        <link>http://conradframe.com/talk/2015/12/25/engineering-unlimited-is-impossible.html</link>
+        <guid isPermaLink="true">http://conradframe.com/talk/2015/12/25/engineering-unlimited-is-impossible.html</guid>
+        
+        
+        <category>talk</category>
+        
+      </item>
+    
+      <item>
+        <title>Reliability with Cleanup Crew Backup Tasks</title>
+        <description>&lt;p&gt;I have run a service called SendRecurring for several years now. The premise of it is that users setup reminders (text or email) and they are sent at the pattern interval they want. My goal has been to get scheduling accurate to the minute.&lt;/p&gt;
+
+&lt;p&gt;However as the service has become more popular and received more traffic it has been difficult to stay within the 1 minute standard. Highly popular times such as at the beginning of the work day and end of the work day on the east coast were starting to begin to creep outside of the 1 minute range. This was because the server was queuing up all of the emails that need to go out at a certain time and looping through them, sending each one, and re-scheduling them etc, all in one process.&lt;/p&gt;
+
+&lt;p&gt;I solved this initial buildup problem a ways back by sending all of the reminders that are due to go out to task queues that can be dispatched by multiple processes if need be. Extra instances can be spun up and used to send out emails etc. This has largely solved the 1 minute error.. however, other problems have risen.&lt;/p&gt;
+
+&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+&lt;p&gt;For some reason I do not know (maybe due to multithreading) some emails will slip through the cracks occassionally. It is frustrating. An email that slips through the cracks would not send and would not update its next send time… so it would be lost in limbo until the user noticed and corrected its schedule. Or emailed me to do it. Not ideal for anyone!&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+&lt;p&gt;The solution I came up with to solve this is a special task that plays the role of “cleanup crew”. I created a second cron job that trails behind the main cron job by a gap and catches the reminders that were not sent at the time they were supposed to. Currently, I am using a trailing time of about 10 minutes while this is new, but as I becoe more confident in the system I may tighten the gap for less delay for the caught emails. Already the results have been great.&lt;/p&gt;
+
+&lt;p&gt;I made sure to turn on logging for anything that the cleanup crew catches and it has been extremely helpful in finding those one-off reminders that fail to send, and also some very old reminders that had had issues.&lt;/p&gt;
+</description>
+        <pubDate>2015-10-27 00:00:00 -0700</pubDate>
+        <link>http://conradframe.com/talk/2015/10/27/sendrecurring-backup-cleaner-task.html</link>
+        <guid isPermaLink="true">http://conradframe.com/talk/2015/10/27/sendrecurring-backup-cleaner-task.html</guid>
+        
+        
+        <category>talk</category>
+        
+      </item>
+    
+      <item>
+        <title>How I Got Persistent Data in iOS with Swift</title>
+        <description>&lt;p&gt;I have been working on an iOS app called Flash Force over the past few months and one of the biggest problems I had to overcome right away was how to get small bits of data to persist for a user across all their devices and across uninstall/reinstalls of the app.&lt;/p&gt;
+
+&lt;p&gt;The best way I discovered is to store the data in the &lt;a href=&quot;https://developer.apple.com/library/mac/documentation/Security/Conceptual/keychainServConcepts/01introduction/introduction.html&quot;&gt;Keychain&lt;/a&gt; (which is typically used to store passwords and keys). Apple provides Keychain use free of charge to both developers and users and the same Keychain is accessible by a user from any of their devices at any time. And users cannot directly edit Keychain values themselves.&lt;/p&gt;
+
+&lt;p&gt;Storing values in Keychain is simple with the helper functions provided in &lt;a href=&quot;https://github.com/exchangegroup/keychain-swift&quot;&gt;Keychain-Swift&lt;/a&gt;. Without a helper library the built-in API is many more lines of code.&lt;/p&gt;
+
+&lt;p&gt;All you have to do is plop the main swift file from that repository into your project and you can start getting and setting Keychain values with something like this:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;swift&quot;&gt;keychain.set(&amp;quot;hello world&amp;quot;, forKey: &amp;quot;my key&amp;quot;)
+
+keychain.get(&amp;quot;my key&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Bear in mind that “keychain” will be the name of whatever you named the file and function.&lt;/p&gt;
+
+&lt;p&gt;Testing for if a keychain value has been set looks something like this:&lt;/p&gt;
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;swift&quot;&gt;if let result = keychain.get(&amp;quot;my key&amp;quot;) {
+    //this will only fire if a value has been set to the result variable
+    print(result)
+  }&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Values for one keychain entry can be cleared with &lt;code&gt;keychain.delete(&quot;my key&quot;)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can clear all of the values with &lt;code&gt;keychain.clear()&lt;/code&gt;, very helpful while testing and for some functionality in apps.&lt;/p&gt;
+
+&lt;p&gt;I have been using the Keychain to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Storing generated user ids for a user that I can use to identify them across devices&lt;/li&gt;
+  &lt;li&gt;Storing whether or not users have redeemed “Free” functionality in the app&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Keychain has been hugely helpful since the other alternatives were a lot more involved. I was debating requiring users to create acounts and log in and store all of their data on our on server, which is a huge amount of up front and on-going work.&lt;/p&gt;
+</description>
+        <pubDate>2015-10-20 00:00:00 -0700</pubDate>
+        <link>http://conradframe.com/ios/swift/2015/10/20/ios-persistent-data.html</link>
+        <guid isPermaLink="true">http://conradframe.com/ios/swift/2015/10/20/ios-persistent-data.html</guid>
+        
+        
+        <category>ios</category>
+        
+        <category>swift</category>
+        
+      </item>
+    
+      <item>
+        <title>Switched to Jekyll ... Welcome to Jekyll!</title>
+        <description>&lt;p&gt;I am impressed with the Jekyll setup with Github pages. It plays to a lot of my strengths to be able to edit posts directly in whatever text editor I want to and to make changes live with a simple &lt;code&gt;git push&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I will leave this intro post on here as a marker point for when I transferred this over. I was able to import a few of my posts from Tumblr without too much trouble so there is a little bit of pre-history on here.&lt;/p&gt;
+
+&lt;p&gt;Static sites like this make a lot of sense for simple portfolio and personal web sites. The main alternative would be a Wordpress site which I have reached for a LOT in the past but this seems better. Wordpress has a tendency to become very slow and bloated fast for the simplest of sites so I don’t know why I haven’t thought to use a static site sooner.&lt;/p&gt;
+
+&lt;p&gt;Resuming Jekyll generated content:&lt;/p&gt;
+
+&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;def print_hi(name)
+  puts &amp;quot;Hi, #{name}&amp;quot;
+end
+print_hi('Tom')
+#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>2015-10-15 03:09:45 -0700</pubDate>
+        <link>http://conradframe.com/jekyll/update/2015/10/15/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://conradframe.com/jekyll/update/2015/10/15/welcome-to-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Username Login Should Always be an Option</title>
+        <description>&lt;p&gt;I have a few thoughts about logins. Especially on a phone, but even on a desktop, it is an inconvenience to type out email addresses, due to symbols and the cruft of the domain name and tld. &lt;/p&gt;
+
+&lt;p&gt;However, email addresses are convenient because they are automatically unique. Being unique already is a nice bonus for a website needing a unique identifier for accounts. And the fact that most services need emails anyway, for contact, and human verification, I can see why emails are a necessity for most services.&lt;/p&gt;
+
+&lt;p&gt;Usernames can add a nice personal touch to a website. People can use the real name or a variant or any reaction thing they want. &lt;/p&gt;
+
+&lt;p&gt;Usernames are usually shorter than email addresses, and always contain less symbols (my bold statement for this). Typing out a username has always seemed slightly more pleasing than typing out an email address.&lt;/p&gt;
+
+&lt;p&gt;No evidence except personal experience for this, but I seem to remember my usernames per site much easier than my email addresses power site. &lt;/p&gt;
+
+&lt;p&gt;My conclusion is that both email addresses and usernames have value and I think that any decent service should allow login with either of them. I decided to allow both while developing &lt;a href=&quot;http://daypage.co&quot;&gt;Daypage&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>2015-08-17 06:06:45 -0700</pubDate>
+        <link>http://conradframe.com/talk/2015/08/17/username-login-should-always-be-an-option.html</link>
+        <guid isPermaLink="true">http://conradframe.com/talk/2015/08/17/username-login-should-always-be-an-option.html</guid>
+        
+        
+        <category>talk</category>
+        
+      </item>
+    
+      <item>
+        <title>Trident of the Red Rooster</title>
+        <description>&lt;p&gt;I love roguelikes and &lt;a href=&quot;http://www.adom.de/home/index.html&quot;&gt;ADOM&lt;/a&gt; is the one that got me into them way back in 1997. I have played it off an on since then, probably logging about 200 hours, most of it in my teenage years. I want to be open though with the fact that I have never beaten it. I have not even come close, I rarely get to the caverns of chaos even, which most people who know the game well would probably hesitate to even call the mid game. &lt;/p&gt;
+
+&lt;p&gt;However, I have read a lot about the advanced parts of the game and I totally love it. The Trident of the Red Rooster is one of those parts. The Trident is the ultimate item of the game. It has a staggering list of &lt;a href=&quot;http://ancardia.wikia.com/wiki/Obtaining_the_Trident_of_the_Red_Rooster&quot;&gt;prerequisites&lt;/a&gt;, things that are obscure and difficult and that must be planned for from the very beginning of the game. &lt;/p&gt;
+
+&lt;p&gt;You could actually beat the game several times over and probably not know of the trident. But if you look close enough (or read spoilers) you will find that it is totally baked into the lore of the Drakalar Chain. And that is part of what I love about Adom, it has bits of tsatic content like the Trident mingled into the randomly generated content. I think it adds a huge amount of depth and familiarity to the game, and helps to create a real living breathing world instead of just some dungeon dive.&lt;/p&gt;
+</description>
+        <pubDate>2015-08-15 11:23:00 -0700</pubDate>
+        <link>http://conradframe.com/talk,/roguelikes/2015/08/15/trident-of-the-red-rooster.html</link>
+        <guid isPermaLink="true">http://conradframe.com/talk,/roguelikes/2015/08/15/trident-of-the-red-rooster.html</guid>
+        
+        
+        <category>talk,</category>
+        
+        <category>roguelikes</category>
+        
+      </item>
+    
+      <item>
+        <title>Keeping Software Minimal</title>
+        <description>&lt;p&gt;Over the past five years I have been involved in at least five software projects. Only one of them has launched. Depressing! I think one of the main reasons for these projects failing is feature creep. &lt;/p&gt;
+
+&lt;p&gt;Feature creep is when you keep adding cool ideas and extra functionality to something, hoping to make it better. It is a really easy habit to form because it is a lot of fun to think of new ideas (and doesn’t take long), and also it is boring to really polish the original idea. The original idea often becomes stale.&lt;/p&gt;
+
+&lt;p&gt;Something I have done while developing &lt;a href=&quot;http://daypage.co&quot;&gt;Daypage&lt;/a&gt; is avoid brainstorming altogether. I simply have not done it. What I have done instead is USE the software every day and make notes and changes focused on usability instead of features. Sometimes functionality “wishes” do come up while I am using my software, and I do write those down, but I have been very hesitant to implement any of the big ones that are outside of the original scope. This has helped me work toward a minimal product that is a delight to use. &lt;/p&gt;
+
+&lt;p&gt;I think often of these words from Basecamp’s founder,“Adopting a feature is like adopting a child.” With too many children you will never launch and even if you do you will probably be too scattered to succeed. &lt;/p&gt;
+
+&lt;p&gt;Keeping software minimal is an art on itself, and takes patience and tons of dedication. I have been really happy with the results of my usage over brainstorming features method far, and am becoming more and more happy with direction that &lt;a href=&quot;http://daypage.co&quot;&gt;Daypage&lt;/a&gt; is going.&lt;/p&gt;
+
+</description>
+        <pubDate>2015-08-04 11:23:00 -0700</pubDate>
+        <link>http://conradframe.com/talk/2015/08/04/keeping-software-minimal.html</link>
+        <guid isPermaLink="true">http://conradframe.com/talk/2015/08/04/keeping-software-minimal.html</guid>
+        
+        
+        <category>talk</category>
+        
+      </item>
+    
+  </channel>
+</rss>
