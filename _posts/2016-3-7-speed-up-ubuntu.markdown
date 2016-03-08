@@ -14,6 +14,7 @@ sudo echo vm.swappiness=15 >> /etc/sysctl.conf
 sudo echo vm.vfs_cache_pressure=50 >> /etc/sysctl.conf
 sudo apt-get install preload
 {% endhighlight %}
+Restart.
 
 ### Explanation and rant for those who care
 
