@@ -8,7 +8,7 @@ Since 2011. In loose order of activeness.
 
 **[<img src="/assets/fqms.png" width="197">](http://freeqms.com)**
 
-FreeQMS is an electronic quality management system (QMS) SaaS for that has a compelling free plan (rare in the industry) and several modules that can be toggled on or off. Built with Python and Django and hosted on Google App Engine and CloudSQL Postgres.
+FreeQMS is an electronic quality management system (QMS) SaaS with a compelling free plan (rare in the industry) and several modules that can be toggled on or off. Built with Python and Django and hosted on Google App Engine and CloudSQL Postgres.
 
 **[<img src="/assets/sr-s.png" width="75"> SendRecurring](http://www.sendrecurring.com)**
 
