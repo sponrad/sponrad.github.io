@@ -14,15 +14,17 @@ FreeQMS is an electronic quality management system (QMS) SaaS with a compelling 
 
 A successful SaaS that sends scheduled email and text reminders. I created this entirely from the bottom up using Python on Google App Engine. I continue to maintain it and create new features.
 
+**[<img src="/assets/birdgame.png" width="75"> The Bird Game (Github repo)](https://github.com/sponrad/thebirdgame)**
+
+A Unity game I made that I'm proud of. The Bird Game is a blatant knockoff of Pacifist Mode in Geometry Wars (which I love). 
+
+[iOS](https://apps.apple.com/us/app/the-bird-game-stop-the-flock/id1135939947), [Android](https://play.google.com/store/apps/details?id=com.VistaSpaClub.TheBirdGame)
+
+[Video footage](https://www.youtube.com/watch?v=V1S690r_zy4)
+
 **[<img src="/assets/DayPage.png" width="75"> Daypage](https://daypage.co)**
 
 A productivity journal that is a work in progress. Journaling what you have accomplished makes you motivated and keeps teams on track. Created in Python/Django, hosted on Heroku with a lot of third party APIs.
-
-**[<img src="/assets/birdgame.png" width="75"> The Bird Game (Github repo)](https://github.com/sponrad/thebirdgame)**
-
-A Unity game I made that I'm proud of. The Bird Game is a blatant knockoff Pacifist Mode in Geometry Wars (which I love). Previously on the App Store and Play Store but has since been removed. Contact me for an APK :D.
-
-[Video footage](https://www.youtube.com/watch?v=V1S690r_zy4)
 
 **[<img src="/assets/fficon.png" width="75"> Flash Force](http://www.flashforceapp.com)**
 
