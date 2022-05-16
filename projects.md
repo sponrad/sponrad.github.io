@@ -6,6 +6,12 @@ permalink: /projects/
 
 Since 2011. In loose order of activeness.
 
+**<img src="/assets/crypto-checker.png" width="75" style="border-radius: 5px;"> Crypto Checker**
+
+Crypto Checker is a simple cryptocurrency price and portfolio value tracker. It's bare-bones (a plus compared to other offerings!), simple to use, and also shows earnings from interest on cryptocurrency holdings. [Privacy policy](/privacy-crypto-checker/).
+
+[iOS](), [Android](https://play.google.com/store/apps/details?id=com.sponrad.cryptointerestchecker)
+
 **[<img src="/assets/fqms.png" width="197">](http://freeqms.com)**
 
 FreeQMS is an electronic quality management system (QMS) SaaS with a compelling free plan (rare in the industry) and several modules that can be toggled on or off. Built with Python and Django and hosted on Google App Engine and CloudSQL Postgres.
