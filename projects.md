@@ -22,7 +22,7 @@ A successful SaaS that sends scheduled email and text reminders. I created this 
 
 **[<img src="/assets/birdgame.png" width="75"> The Bird Game (Github repo)](https://github.com/sponrad/thebirdgame)**
 
-A Unity game I made that I'm proud of. The Bird Game is a blatant knockoff of Pacifist Mode in Geometry Wars (which I love). 
+Dodge, gather, and stun flocks of birds with your trusty paper plane. The Bird Game is a blatant knockoff of Pacifist Mode in Geometry Wars (which I love). Built with Unity.
 
 [iOS](https://apps.apple.com/us/app/the-bird-game-stop-the-flock/id1135939947), [Android](https://play.google.com/store/apps/details?id=com.VistaSpaClub.TheBirdGame)
 
