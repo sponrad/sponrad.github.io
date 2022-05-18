@@ -10,7 +10,7 @@ Since 2011. In loose order of activeness.
 
 Crypto Checker is a simple cryptocurrency price and portfolio value tracker. It's bare-bones (a plus compared to other offerings!), simple to use, and also shows earnings from interest on cryptocurrency holdings. [Privacy policy](/privacy-crypto-checker/).
 
-[iOS](), [Android](https://play.google.com/store/apps/details?id=com.sponrad.cryptointerestchecker)
+[iOS](https://apps.apple.com/app/crypto-checker-with-interest/id1619204176), [Android](https://play.google.com/store/apps/details?id=com.sponrad.cryptointerestchecker)
 
 **[<img src="/assets/fqms.png" width="197">](http://freeqms.com)**
 
