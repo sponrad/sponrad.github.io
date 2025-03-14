@@ -40,6 +40,9 @@ A productivity journal that is a work in progress. Journaling what you have acco
 A mobile app that allows groups of people to flash patterns of light together in sync. I am in charge of app development and created the timing system. I made the iOS app using Swift, the server is Python/Django based, and the Android app using Java.
 
 
+**[hDatePicker](https://conradframe.com/hdatepicker/)** - Javascript library that creates a datepicker that lays out flat horizontal and is responsive.
+
+
 **[Menuflick (archive)](https://web.archive.org/web/20141220064816/http://www.menu-flick.com/)** - Crowdsourced restaurant menus using reviews that are mad libbed by users. Fun project that didn't really get any traction but still available. I was in charge of the backend and some of the frontend work. Built using Python and hosted on Google App Engine.
 
 **[DensityPro (archive)](https://web.archive.org/web/20180315110941/http://densitypro.com/)** - Software that helps with contruction density testing during grading. Built using PHP with Laravel. I have nothing but good to say about Laravel but Python wins my heart.
