@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Vibe Code 2048"
+date:   2025-03-14
+categories: ai
+comments: true
+---
+
+<iframe src="https://raw.githack.com/sponrad/vibe-480/refs/heads/main/index.html" title="Game" height=650 width=600></iframe>
+(click into the iframe)
+
+My previous attempts at using AI nearly extensively to code (with an algo trading python bot and a desktop JSON schema editing tool) did not end up great. I wanted a quick win and within 10 minutes I got a successfully working version of the game 2048 but the numbers go up to 480.
+
+Why 480? Thats the number of months in a typical 40 year career and it's remarkably small.
+
+It took approximately 8 iterations, starting with Grok 3 and pivoting over to Chat GPT 4o. It took longer to make the repo and this post so it's promising!
+
+[https://github.com/sponrad/vibe-480](https://github.com/sponrad/vibe-480)
