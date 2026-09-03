@@ -20,10 +20,11 @@ Apptivate-style global hotkeys for macOS. Assign shortcuts like Control+1 to an 
 
 A successful SaaS that sends scheduled email and text reminders. I created this entirely from the bottom up using Python on Google App Engine. I continue to maintain it and create new features.
 
-**<img src="/assets/crypto-checker.png" width="75" style="border-radius: 5px;"> Crypto Checker**
+**[<img src="/assets/crypto-checker.png" width="75" style="border-radius: 5px;"> Crypto Checker](https://crypto.devlabtech.com/)**
 
-Crypto Checker is a simple cryptocurrency price and portfolio value tracker. It's bare-bones (a plus compared to other offerings!), simple to use, and also shows earnings from interest on cryptocurrency holdings. Fun with React Native.
+Crypto Checker is a simple cryptocurrency price and portfolio value tracker. It's bare-bones (a plus compared to other offerings!), simple to use, and also shows earnings from interest on cryptocurrency holdings. Originally React Native; now available on the web too — who needs the App Store?
 
+[Web](https://crypto.devlabtech.com/) |
 [Github](https://github.com/sponrad/crypto-interest-checker) |
 [iOS](https://apps.apple.com/app/crypto-checker-with-interest/id1619204176) |
 [Android (archive)](https://web.archive.org/web/20240618215730/https://play.google.com/store/apps/details?id=com.sponrad.cryptointerestchecker) |
@@ -52,7 +53,7 @@ Fling poop at bugs crawling out of a toilet before they escape. A silly arcade g
 
 A productivity journal that is a work in progress. Journaling what you have accomplished makes you motivated and keeps teams on track. Created in Python/Django, hosted on Heroku with a lot of third party APIs.
 
-[Even older Daypage archive](https://web.archive.org/web/20190421033952/https://www.daypage.co/)
+[Even older Daypage archive](https://web.archive.org/web/20171017094403/https://www.daypage.co/)
 
 **[<img src="/assets/fficon.png" width="75"> Flash Force (archive)](https://web.archive.org/web/20180316084339/http://flashforceapp.com/)**
 
