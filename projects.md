@@ -6,6 +6,16 @@ permalink: /projects/
 
 Since 2011. In loose order of age / activeness.
 
+**<img src="/assets/songspiano.png" width="75" style="border-radius: 5px;"> SongsPiano**
+
+Chrome extension that adds piano chord diagrams to Songsterr chord pages. Click a chord label and you get a piano keyboard under the usual guitar diagram, with standard chord tones parsed via tonal.js. Built as a Manifest V3 content script.
+
+[Chrome Web Store](https://chromewebstore.google.com/detail/cckhmgfcaamapilkphaekgehepdhlmbh)
+
+**[<img src="/assets/appswitcher.png" width="75" style="border-radius: 5px;"> AppSwitcher](https://github.com/sponrad/appswitcher)**
+
+Apptivate-style global hotkeys for macOS. Assign shortcuts like Control+1 to an app — if it’s running, AppSwitcher brings it forward; if not, it launches it. Native Swift menu bar app for Apple Silicon and current macOS, with Apptivate config import.
+
 **[<img src="/assets/sr-s.png" width="75"> SendRecurring](http://www.sendrecurring.com)**
 
 A successful SaaS that sends scheduled email and text reminders. I created this entirely from the bottom up using Python on Google App Engine. I continue to maintain it and create new features.
@@ -23,11 +33,20 @@ Crypto Checker is a simple cryptocurrency price and portfolio value tracker. It'
 
 FreeQMS is an electronic quality management system (QMS) SaaS with a compelling free plan (rare in the industry) and several modules that can be toggled on or off. Built with Python and Django and hosted on Google App Engine and CloudSQL Postgres.
 
-**[<img src="/assets/birdgame.png" width="75"> The Bird Game (Github repo)](https://github.com/sponrad/thebirdgame)**
+**[<img src="/assets/birdgame.png" width="75"> The Bird Game](https://bird.devlabtech.com/)**
 
-Dodge, gather, and stun flocks of birds with your trusty paper plane. The Bird Game is a blatant knockoff of Pacifist Mode in Geometry Wars (which I love). Built with Unity.
+Dodge, gather, and stun flocks of birds with your trusty paper plane. The Bird Game is a blatant knockoff of Pacifist Mode in Geometry Wars (which I love). Originally built in Unity, now rewritten for the web with PixiJS.
 
+[Play](https://bird.devlabtech.com/) |
+[Github](https://github.com/sponrad/thebirdgame) |
 [Video footage](https://www.youtube.com/watch?v=V1S690r_zy4)
+
+**[<img src="/assets/slamdump.png" width="75"> Slam Dump](https://slamdump.devlabtech.com/)**
+
+Fling poop at bugs crawling out of a toilet before they escape. A silly arcade game originally built in Unity, now rewritten for the web with PixiJS.
+
+[Play](https://slamdump.devlabtech.com/) |
+[Github](https://github.com/sponrad/slamdump)
 
 **[<img src="/assets/DayPage.png" width="75"> Daypage (archive)](https://web.archive.org/web/20190421033952/https://www.daypage.co/)**
 
