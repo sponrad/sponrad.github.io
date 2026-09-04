@@ -10,7 +10,7 @@ Since 2011. In loose order of age / activeness.
 
 Chrome extension that adds piano chord diagrams to Songsterr chord pages. Click a chord label and you get a piano keyboard under the usual guitar diagram, with standard chord tones parsed via tonal.js. Built as a Manifest V3 content script.
 
-[Chrome Web Store](https://chromewebstore.google.com/detail/cckhmgfcaamapilkphaekgehepdhlmbh)
+[Chrome Web Store](https://chromewebstore.google.com/detail/songspiano/cckhmgfcaamapilkphaekgehepdhlmbh)
 
 **[<img src="/assets/appswitcher.png" width="75" style="border-radius: 5px;"> AppSwitcher](https://github.com/sponrad/appswitcher)**
 
